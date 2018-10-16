@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WIFI_NAME=$(nmcli device wifi | rofi -dmenu -p "Selection network to connect to" -location 3 | sed 's/\ \ \ */,/g' | cut -d, -f2)
+WIFI_NAME=$(nmcli device wifi | rofi -dmenu -p "Select network to connect to" -location 3 -width 50 | sed 's/\ \ \ */,/g' | cut -d, -f2)
 echo "$WIFI_NAME"
 
 CONNECTIONS=$(nmcli connection show | grep -w "$WIFI_NAME")
